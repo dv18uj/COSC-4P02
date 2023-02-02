@@ -7,6 +7,9 @@
 	check version:
 	node -v
 
+######Dependencies
+
+
 cd Desktop/COSC-4P02/PanoTourAPP
 npx expo start
 
@@ -18,3 +21,4 @@ npx expo export:web
 
 To open webserver run, 
 npx serve web-build
+
