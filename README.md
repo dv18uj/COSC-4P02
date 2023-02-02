@@ -1,4 +1,4 @@
-Expo does not support past Node 16.90.0
+######Expo does not support past Node 16.90.0
  -For MacOS:
 	using node's version management to install Node v16:
 	npm install -g n
