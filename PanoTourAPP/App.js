@@ -1,7 +1,8 @@
+/** 
 import React, { Suspense, useRef } from 'react';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import './style.css';
+//import './style.css';
 
 import Dome from './Dome'; 
 import Menu from './Menu';
@@ -17,7 +18,6 @@ function Controls(props) {
 }
 
 export default function App() {
-  let mn = new Menu(); 
   return (
     <Canvas camera={{ position: [0, 0, 0.1] }}>
       <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2} autoRotate rotateSpeed={-0.5} />
@@ -27,4 +27,17 @@ export default function App() {
     </Canvas>
   )
   }
+*/
+import React from 'react';
+import {Text, View} from 'react-native';
 
+import Paragraph from './molecules/Paragraph';
+
+export default function App() {
+  return(
+    <View>
+      <Paragraph />
+    </View>
+
+  )
+}

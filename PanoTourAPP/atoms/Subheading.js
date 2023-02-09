@@ -1,10 +1,10 @@
 //Smaller and no bold compared to heading
+import React from 'react'
+import { Text } from 'react-native'
 
 export default function Subheading(){
     return(
-        <div>
-            <text>I am a sub heading</text>
-        </div>
-
+        <Text>I am a subheading!</Text>
     )
+
 }
