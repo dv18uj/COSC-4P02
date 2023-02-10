@@ -8,18 +8,9 @@ import Heading from '../atoms/Heading'
 
 export default function Paragraph(){
         return(
-            <View style={styles.container}>
-            <Text>This is a test</Text>
+            <View>
             <Heading/>
             <Subheading/>
             </View>
         )
-    
 }
-
-const styles = StyleSheet.create({
-    container:{
-        alignItems: 'center',
-        top: 100
-    }
-})

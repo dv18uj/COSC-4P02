@@ -32,10 +32,11 @@ import React from 'react';
 import {Text, View} from 'react-native';
 
 import Paragraph from './molecules/Paragraph';
+import styles from './StyleHeads';
 
 export default function App() {
   return(
-    <View>
+    <View style = {styles.bg}>
       <Paragraph />
     </View>
 
