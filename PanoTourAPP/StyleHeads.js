@@ -19,7 +19,7 @@ export default StyleSheet.create({
         textAlign: 'right'
     },
     bg:{
-        backgroundColor: "grey"
+        flex: 1
 
     }
 });

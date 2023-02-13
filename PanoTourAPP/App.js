@@ -30,6 +30,7 @@ export default function App() {
 */
 import React from 'react';
 import {Text, View} from 'react-native';
+import Heading from './atoms/Heading';
 
 import Paragraph from './molecules/Paragraph';
 import styles from './StyleHeads';
@@ -37,7 +38,9 @@ import styles from './StyleHeads';
 export default function App() {
   return(
     <View style = {styles.bg}>
-      <Paragraph />
+      <Paragraph leftText={<Heading />} rightText={<Heading />}/>
+      <Paragraph leftText={<Heading />} rightText={<Heading />}/>
+      <Paragraph leftText={<Heading />} rightText={<Heading />}/>
     </View>
 
   )
