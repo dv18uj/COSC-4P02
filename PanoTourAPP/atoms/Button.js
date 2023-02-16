@@ -1,3 +1,3 @@
 /**
- * A clickable button starts a tour
+ * A clickable button
  */

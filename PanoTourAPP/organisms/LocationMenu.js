@@ -1,0 +1,1 @@
+//This menu has map keys that start the tour from specified locations

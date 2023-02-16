@@ -1,0 +1,1 @@
+// This menu has a the museum logo, app description and starting button
