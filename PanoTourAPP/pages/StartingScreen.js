@@ -3,12 +3,14 @@ import DescriptionMenu from "../organisms/DescriptionMenu.js"
 import LocationMenu from "../organisms/LocationMenu.js"
 import styled from "styled-components";
 import React from "react";
-import background from "../assets/museum_background.jpeg"
+import background from "../assets/museum_background.jpg"
 
 const OuterWrapper =styled.div`
     height: 100%;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${background});
     background-size: cover;
 `;
@@ -19,9 +21,9 @@ const Wrapper = styled.div`
 `;
 
 const StyledLine = styled.div`
-    height: 95%;
-    width: 5px;
-    background-color: white;
+    height: 80%;
+    width: 4px;
+    background-color: rgba(255,255,255,0.75);
 
 `;
 
@@ -29,6 +31,7 @@ function StartingScreen () {
     return(
         <OuterWrapper>
         <Wrapper><DescriptionMenu/></Wrapper>
+        <StyledLine/>
         <Wrapper><LocationMenu/></Wrapper>
         </OuterWrapper>
     )

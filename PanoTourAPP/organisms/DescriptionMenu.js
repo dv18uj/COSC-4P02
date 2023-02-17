@@ -17,10 +17,16 @@ const Paragraph = styled.p`
     color: white;
     font-size: 12;
 `;
+
+const Logo = styled.img`
+    background: rgba(255,255,255,0.75);
+    border: 2px solid white; 
+`;
+
 function DescriptionMenu () {
     return (
         <Wrapper>
-            <img src = {museumLogo} alt = "NOTL Museum Logo"/>
+            <Logo src = {museumLogo} alt = "NOTL Museum Logo"/>
             <Paragraph>
             <Paragraph>
             Lorem ipsum dolor sit amet, consectetur
@@ -42,7 +48,7 @@ function DescriptionMenu () {
              adipiscing elit. Ut et massa. 
             </Paragraph>
             </Paragraph>
-            <Button/>
+            <Button title="Start Tour"/>
         </Wrapper>
     );
 }

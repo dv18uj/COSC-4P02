@@ -12,9 +12,9 @@ const StyledButton = styled.button`
     border: 2px solid white;
     border-radius: 3px;
 `;
-function Button () {
+function Button ({title}) {
     return(
-        <StyledButton>Start</StyledButton>
+        <StyledButton>{title}</StyledButton>
     )
 }
 
