@@ -6,6 +6,7 @@ import './style.css';
 import Dome from './Dome'; 
 import Menu from './Menu';
 import Navigation from './Navigation';
+import StartingScreen from './pages/StartingScreen'
 
 extend({ OrbitControls })
 
@@ -17,14 +18,15 @@ function Controls(props) {
 }
 
 export default function App() {
-  let mn = new Menu(); 
+  //let mn = new Menu(); 
   return (
-    <Canvas camera={{ position: [0, 0, 0.1] }}>
+    /*<Canvas camera={{ position: [0, 0, 0.1] }}>
       <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2} autoRotate rotateSpeed={-0.5} />
       <Suspense fallback={null}>
         <Dome />
       </Suspense>
-    </Canvas>
+    </Canvas>*/
+    <StartingScreen/>
   )
   }
 
