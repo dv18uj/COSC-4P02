@@ -1,10 +1,11 @@
 //Heading and Subheading
 import Heading from '../atoms/Heading.js'
-import Subheading from '../atoms/Subheading'
+import Subheading from '../atoms/Subheading.js'
 
-export default class Paragraph{
+function Paragraph() {
     return(
-        <Heading />
-        <Subheading /> 
-    )
+        <div></div>
+        )
 }
+
+export default Paragraph
