@@ -1,12 +1,16 @@
 //This is a heading, larger font and in bold compared to a subheading
 import React from 'react'
-import {Text, View} from 'react-native'
+import styled from styled-components
 
-import styles from '../StyleHeads'
-export default function Heading(){
+const StyledHeading = styled.Heading`
+    font-weight: 700;
+    font-size: .5em;
+    &:hover {
+        font-weight:900;
+    }
+`;
+export default function Heading(props){
     return(
-        <View>
-        <Text style={styles.header}>I am a heading!</Text>
-        </View>
+        <StyledHeading>{props.text}</StyledHeading>
     )
 }
