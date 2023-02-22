@@ -1,10 +1,18 @@
 //Smaller and no bold compared to heading
+import React from 'react'
+import styled from styled.components
 
-export default function Subheading(){
+const StyledSubheading = styled.p`
+    font-size: .2em;
+    color: rgba(255,255,255,0.75);
+    &hover {
+        color: rgba(255,255,255,1);
+    } 
+`;
+
+export default function Subheading(props){
     return(
-        <div>
-            <text>I am a sub heading</text>
-        </div>
-
+        <StyledSubheading>{props.text}</StyledSubheading>
     )
+
 }
