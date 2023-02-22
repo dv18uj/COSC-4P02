@@ -1,3 +1,5 @@
+//this class can have an image of a location, heading and subheading with
+// each being clickable and jumps to a tour location.
 import Heading from "../atoms/Heading"
 import Subheading from "../atoms/Subheading"
 import styled from styled.components

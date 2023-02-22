@@ -1,0 +1,1 @@
+//This page combines components to allow the user to tour 

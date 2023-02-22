@@ -1,7 +1,3 @@
-//Heading and Subheading
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-
 //import Heading from '../atoms/Heading.js'
 import Subheading from '../atoms/Subheading'
 import Heading from '../atoms/Heading'

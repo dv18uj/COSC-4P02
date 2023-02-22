@@ -1,0 +1,1 @@
+//This waypoint is a clickable icon that jumps to an instance of a tour
