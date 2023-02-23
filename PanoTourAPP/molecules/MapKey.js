@@ -2,27 +2,37 @@
 // each being clickable and jumps to a tour location.
 import Heading from "../atoms/Heading"
 import Subheading from "../atoms/Subheading"
-import styled from styled.components
+import styled from "styled-components"
 
 const Wrapper = styled.div`
-
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 `;
 
-const StledMapKey = styled.div`
-
+const StyledMapKey = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    height: 100px;
+    width: 95%;
+    gap: 20px;
+    font-size: 1em;
 `;
 const StyledImage = styled.img`
+    height: 100%;
 `;
 function MapKey (props) {
     return (
         
-            <StledMapKey>
-                <StyledImage src={props.link} alt={props.alt}/>
+            <StyledMapKey>
+                <StyledImage src={props.imgSource} alt={props.alt}/>
                 <Wrapper>
-                    <Heading>{props.heading}</Heading>
-                    <Subheading>{props.subheading}</Subheading>
+                    <Heading text={props.heading}/>
+                    <Subheading text={props.subheading}/>
                 </Wrapper>
-            </StledMapKey>
+            </StyledMapKey>
         
     )
 }

@@ -1,8 +1,7 @@
-/** 
+
 import React, { Suspense, useRef } from 'react';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-//import './style.css';
 
 import Dome from './Dome'; 
 import Menu from './Menu';
@@ -29,21 +28,4 @@ export default function App() {
     <StartingScreen/>
   )
   }
-*/
-import React from 'react';
-import {Text, View} from 'react-native';
-import Heading from './atoms/Heading';
 
-import Paragraph from './molecules/Paragraph';
-import styles from './StyleHeads';
-
-export default function App() {
-  return(
-    <View style = {styles.bg}>
-      <Paragraph leftText={<Heading />} rightText={<Heading />}/>
-      <Paragraph leftText={<Heading />} rightText={<Heading />}/>
-      <Paragraph leftText={<Heading />} rightText={<Heading />}/>
-    </View>
-
-  )
-}
