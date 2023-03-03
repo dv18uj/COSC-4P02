@@ -27,5 +27,4 @@ export default function App() {
     </Canvas>*/
     <StartingScreen/>
   )
-  }
-
+  };
