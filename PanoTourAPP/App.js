@@ -1,5 +1,6 @@
 
 import React, { Suspense, useRef } from 'react';
+import Tour from './pages/Tour'
 
 export default function App() {
   return (
