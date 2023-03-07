@@ -23,7 +23,10 @@ const Logo = styled.img`
     border: 2px solid white; 
 `;
 
-function DescriptionMenu () {
+function DescriptionMenu (press) {
+
+
+
     return (
         <Wrapper>
             <Logo src = {museumLogo} alt = "NOTL Museum Logo"/>
@@ -48,7 +51,7 @@ function DescriptionMenu () {
              adipiscing elit. Ut et massa. 
             </Paragraph>
             </Paragraph>
-            <Button title="Start Tour"/>
+            <Button title="Start Tour" onPress={press}/>
         </Wrapper>
     );
 }

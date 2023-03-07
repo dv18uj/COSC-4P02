@@ -2,6 +2,7 @@
  * A clickable button
  */
 import styled from "styled-components";
+import { TouchableOpacity} from 'react-native';
 
 const StyledButton = styled.button`
     background: black;
@@ -12,9 +13,11 @@ const StyledButton = styled.button`
     border: 2px solid white;
     border-radius: 3px;
 `;
-function Button ({title}) {
+function Button ({title, press}) {
     return(
-        <StyledButton>{title}</StyledButton>
+        <TouchableOpacity onPress={press}>
+            <StyledButton>{title}</StyledButton>
+        </TouchableOpacity>
     )
 }
 

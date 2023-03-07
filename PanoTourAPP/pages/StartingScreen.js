@@ -27,10 +27,10 @@ const StyledLine = styled.div`
 
 `;
 
-function StartingScreen () {
+function StartingScreen (press) {
     return(
         <OuterWrapper>
-        <Wrapper><DescriptionMenu/></Wrapper>
+        <Wrapper><DescriptionMenu onPress={press}/></Wrapper>
         <StyledLine/>
         <Wrapper><LocationMenu/></Wrapper>
         </OuterWrapper>

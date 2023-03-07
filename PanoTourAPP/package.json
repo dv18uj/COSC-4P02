@@ -19,7 +19,7 @@
     "react-dom": "18.1.0",
     "react-native": "0.70.5",
     "react-native-web": "~0.18.9",
-    "styled-components": "^5.3.6",
+    "styled-components": "^5.3.8",
     "three": "^0.149.0"
   },
   "devDependencies": {
