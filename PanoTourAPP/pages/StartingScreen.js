@@ -4,7 +4,7 @@ import LocationMenu from "../organisms/LocationMenu.js"
 import styled from "styled-components";
 import React from "react";
 import background from "../assets/museum_background.jpg"
-import NavBar from "../organisms/NavMenu"
+import NavBar from "../templates/PanelButton"
 
 const OuterWrapper =styled.div`
     height: 100%;
