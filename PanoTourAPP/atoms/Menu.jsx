@@ -22,6 +22,7 @@ const Ul = styled.ul`
         left: -250;
         height: 100%;
         width: 250px;
+        z-index: 90;
         padding-top: 3em;
         transition: transform 0.3s ease-in-out;
     
