@@ -8,9 +8,7 @@ import SideMenu from "../molecules/SideMenu";
 
 const NavMenu = () => {
     return(
-        <nav>
-             <SideMenu />
-        </nav>
+             <SideMenu /> 
      )
 }
 export default NavMenu;
