@@ -1,7 +1,9 @@
 // This menu has a the museum logo, app description and starting button
 import museumLogo from "../assets/Museum_logo.svg";
-import Button from '../atoms/Button.js';
+//import Button from '../atoms/Button.js';
+import {Button} from 'react-native'
 import styled from "styled-components";
+import {useNavigation} from '@react-navigation/native'
 
 const Wrapper = styled.div`
     display: flex;
@@ -24,6 +26,7 @@ const Logo = styled.img`
 `;
 
 function DescriptionMenu () {
+    const navigation = useNavigation();
     return (
         <Wrapper>
             <Logo src = {museumLogo} alt = "NOTL Museum Logo"/>
@@ -48,7 +51,13 @@ function DescriptionMenu () {
              adipiscing elit. Ut et massa. 
             </Paragraph>
             </Paragraph>
-            <Button title="Start Tour"/>
+            <Button
+            color="rgba(0,0,0,.5)"
+            border= "2px solid white"
+            border-radius= "3px"
+            title="Begin Tour"
+            onPress={() => navigation.navigate('Tour')}
+            />
         </Wrapper>
     );
 }
