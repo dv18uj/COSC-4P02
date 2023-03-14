@@ -11,7 +11,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Start">
         <Stack.Screen name="Start" component={StartingScreen} options={{headerShown:false}} />
-        <Stack.Screen name="Tour" component={Tour}/>
+        <Stack.Screen name="Tour" component={Tour} options={{headerShown:false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

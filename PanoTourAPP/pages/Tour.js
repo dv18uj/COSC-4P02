@@ -14,7 +14,7 @@ function Controls(props) {
   return <orbitControls ref={ref} target={[0, 0, 0]} {...props} args={[camera, gl.domElement]} />
 }
 
-function Tour () {
+function Tour ({navigation}) {
     return(
     <Canvas camera={{ position: [0, 0, 0.1] }}>
     <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2} />
