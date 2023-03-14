@@ -5,7 +5,8 @@ import styled from "styled-components";
 import React from "react";
 import background from "../assets/museum_background.jpg"
 import NavBar from "../organisms/NavMenu"
-
+import {Button} from 'react-native';
+import { useNavigation } from '@react-navigation/native'
 const OuterWrapper =styled.div`
     height: 100%;
     display: flex;
@@ -32,13 +33,15 @@ const StyledLine = styled.div`
 
 function StartingScreen () {
     return(
-        <><NavBar />
-            <OuterWrapper>
-            <Wrapper><DescriptionMenu /></Wrapper>
-            <StyledLine />
-            <Wrapper><LocationMenu /></Wrapper>
-            </OuterWrapper>
-        </>
+        /**<Button
+            title="Start Tour"
+            onPress={()=>navigation.navigate('Tour')}
+        />**/
+        <OuterWrapper>
+        <Wrapper><DescriptionMenu/></Wrapper>
+        <StyledLine />
+        <Wrapper><LocationMenu /></Wrapper>
+        </OuterWrapper>
     )
 }
 
