@@ -4,6 +4,7 @@ import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fibe
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import NavMenu from '../organisms/NavMenu';
 import Dome from '../organisms/Dome'; 
+import InfoPanel from "../templates/PanelButton"
 
 extend({ OrbitControls })
 
@@ -16,7 +17,9 @@ function Controls(props) {
 
 function Tour () {
     return(
-      <><NavMenu/>
+      <>
+      <InfoPanel />
+      <NavMenu/>
       <Canvas camera={{ position: [0, 0, 0.1] }}>
       <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2} />
       <Suspense fallback={null}>
