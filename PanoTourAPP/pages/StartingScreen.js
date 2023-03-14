@@ -33,10 +33,6 @@ const StyledLine = styled.div`
 
 function StartingScreen () {
     return(
-        /**<Button
-            title="Start Tour"
-            onPress={()=>navigation.navigate('Tour')}
-        />**/
         <OuterWrapper>
         <Wrapper><DescriptionMenu/></Wrapper>
         <StyledLine />
