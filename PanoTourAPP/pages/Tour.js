@@ -2,7 +2,7 @@
 import React, { Suspense, useRef } from 'react';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-
+import NavBar from '../organisms/NavMenu'
 import Dome from '../organisms/Dome'; 
 import InfoPanel from "../templates/PanelButton"
 
@@ -17,14 +17,16 @@ function Controls(props) {
 
 function Tour () {
     return(
-      <><InfoPanel /><Canvas camera={{ position: [0, 0, 0.1] }}>
-
-        <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2} />
-        <Suspense fallback={null}>
-          <Dome />
-
-        </Suspense>
-      </Canvas></>
+      <>
+      <InfoPanel />
+      <NavBar/>
+      <Canvas camera={{ position: [0, 0, 0.1] }}>
+      <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2} />
+      <Suspense fallback={null}>
+        <Dome />
+      </Suspense>
+      </Canvas>
+      </>
     );
 }
 
