@@ -31,7 +31,7 @@ const StyledLine = styled.div`
 
 //added NavBar for reference, should be removed later
 
-function StartingScreen ({navigation}) {
+function StartingScreen () {
     return(
         /**<Button
             title="Start Tour"
