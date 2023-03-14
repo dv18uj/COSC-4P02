@@ -1,15 +1,18 @@
 
 import React, { Suspense, useRef } from 'react';
+import StartingScreen from './pages/StartingScreen'
+import Link, { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Tour from './pages/Tour'
+const Stack=createNativeStackNavigator();
 
 export default function App() {
   return (
-    /*<Canvas camera={{ position: [0, 0, 0.1] }}>
-      <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2} autoRotate rotateSpeed={-0.5} />
-      <Suspense fallback={null}>
-        <Dome />
-      </Suspense>
-    </Canvas>*/
-    <Tour/>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Start">
+        <Stack.Screen name="Start" component={StartingScreen} options={{headerShown:false}} />
+        <Stack.Screen name="Tour" component={Tour}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   )
   };
