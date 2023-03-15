@@ -1,18 +1,26 @@
 //Smaller and no bold compared to heading
 import React from 'react'
-import styled from "styled-components"
+import {Text, StyleSheet} from 'react-native'
 
-const StyledSubheading = styled.p`
-    font-size: .5em;
-    color: rgba(255,255,255,0.75);
-    &hover {
-        color: rgba(255,255,255,1);
-    } 
-`;
+// const StyledSubheading = styled.p`
+//     font-size: .5em;
+//     color: rgba(255,255,255,0.75);
+//     &hover {
+//         color: rgba(255,255,255,1);
+//     } 
+// `;
+const styles = StyleSheet.create({
+    subheading: {
+      fontSize: 17, 
+      color: 'rgba(255, 255, 255, 0.75)',
+    },
+  });
 
 export default function Subheading(props){
     return(
-        <StyledSubheading>{props.text}</StyledSubheading>
+        <>
+            <Text style = {styles.subheading}>{props.text}</Text>
+        </>
     )
 
 }
