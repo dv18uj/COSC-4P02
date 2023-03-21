@@ -3,19 +3,18 @@ import React, { Suspense, useRef, useState } from 'react';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as THREE from "three";
+import {CSS2DObject} from "three/examples/jsm/renderers/CSS2DRenderer"
 import Dome from '../organisms/Dome'; 
 import InfoPanel from "../templates/InfoPanel.jsx";
 import SideMenu from "../organisms/NavMenu";
 import './tour.css';
-
-
+import '../templates/infoPanel.css';
 
 const store = [
   {position: [10, 4, -15]}
 ];
 
 function ClickableObject() {
-  const [openPanel, setOpenPanel] = useState(false);
   const setPos = store[0];
   return <Dome onClick = {() => setOpenPanel(true)} {...setPos} />
 }
@@ -31,14 +30,13 @@ function Controls(props) {
 
 function Tour () {
     return(
-      <><InfoPanel /><SideMenu/>
+      <><SideMenu/>
       <Canvas  camera={{ position: [0, 0, 0.1] }}>
         <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2} />
         <Suspense fallback={null}>
-          
+        
         <ClickableObject />
         
-
         </Suspense>
       </Canvas> </>
     );
