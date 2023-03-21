@@ -9,14 +9,17 @@ import InfoPanel from "../templates/InfoPanel.jsx";
 import SideMenu from "../organisms/NavMenu";
 import './tour.css';
 import '../templates/infoPanel.css';
+import {Html} from "@react-three/drei";
+import { Scene } from 'three';
 
 const store = [
-  {position: [10, 4, -15]}
+  {position: [10, 4, -15], id: 0}, //top of door
+  {position: [7,-9, 10], id: 1} //laptop on table
 ];
 
-function ClickableObject() {
-  const setPos = store[0];
-  return <Dome onClick = {() => setOpenPanel(true)} {...setPos} />
+  function ClickableObject({set}) {
+  const {id, ...props} = store[set];
+  return <Dome onClick = {() => setOpenPanel(true)} {...props} />
 }
 
 
@@ -35,8 +38,8 @@ function Tour () {
         <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2} />
         <Suspense fallback={null}>
         
-        <ClickableObject />
-        
+        <ClickableObject set={0}/>
+        <ClickableObject set={1}/>
         </Suspense>
       </Canvas> </>
     );
