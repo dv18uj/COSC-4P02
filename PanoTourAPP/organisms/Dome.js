@@ -21,8 +21,8 @@ function Dome({position, id, rotation}) {
       </mesh>
        
       <mesh position={position} rotation = {rotation} id = {id} onClick={() => setOpenPanel(true)} >
-      <planeBufferGeometry attach="geometry" args={[1, 1]} />
-      <meshBasicMaterial attach="material" map={icon_idle} />
+      <planeBufferGeometry attach="geometry" args={[1, 1]}  />
+      <meshBasicMaterial attach="material" map={icon_idle} transparent = {true} />
       <Html center>
         <div className="container">
       <NavMenu open = {openPanel} onClose={()=> setOpenPanel(false)}/>
