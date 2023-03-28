@@ -1,0 +1,42 @@
+.content {
+    margin: 0;
+    padding: 0;
+    flex-flow: column nowrap;
+    background-color: #252525;
+    opacity: 0.99;
+    position: fixed;
+    top: 0;
+    left: -250;
+    height: 100%;
+    width: 250px;
+    z-index: 90;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.content_active{
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    flex-flow: column nowrap;
+    background-color: #252525;
+    opacity: 0.99;
+    position: fixed;
+    top: 0;
+    left: -250;
+    height: 100%;
+    width: 250px;
+    z-index: 90;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+li {
+    position: relative;
+    padding: 10px 10px;
+    top: 4em;
+    color: #fff;
+    
+}
+    

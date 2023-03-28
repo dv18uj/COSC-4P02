@@ -4,7 +4,7 @@ import LocationMenu from "../organisms/LocationMenu.js"
 import styled from "styled-components";
 import React from "react";
 import background from "../assets/museum_background.jpg"
-import NavBar from "../organisms/NavMenu"
+import Sidemenu from "../molecules/SideMenu"
 
 const OuterWrapper =styled.div`
     height: 100%;
@@ -32,7 +32,7 @@ const StyledLine = styled.div`
 
 function StartingScreen () {
     return(
-        <><NavBar />
+        <><Sidemenu />
             <OuterWrapper>
             <Wrapper><DescriptionMenu /></Wrapper>
             <StyledLine />
