@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import NavMenu from "./InfoPanel";
+import {useNavigation} from '@react-navigation/native'
+import './infoPanel.css'
 
 //adds button and animation to menu to create the side menu
 
@@ -7,11 +8,10 @@ import NavMenu from "./InfoPanel";
 
 const SideMenu = () => {
     const [openPanel, setOpen] = useState(false);
-    
+    const navigation = useNavigation();
     return(
         <div>
-        <button className="infoPanelBtn" onClick = {() => setOpen(true)}>Open</button>
-            <NavMenu open ={openPanel} onClose={()=> setOpen(false)}/>
+            <button className="infoPanelBtn" onClick = {() => navigation.navigate('InfoPanel')}>Open</button>
         </div>
 
     )
