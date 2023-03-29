@@ -10,6 +10,7 @@ import SideMenu from "../organisms/NavMenu";
 import './tour.css';
 import '../templates/infoPanel.css';
 import { Vector3 } from 'three';
+import {useNavigation} from '@react-navigation/native';
 
 const store = [
   {position: [10, 4, -15], rotation: [0,-0.5,0], id: 0}, //top of door
@@ -17,11 +18,10 @@ const store = [
   {position: [-1, -4, 15], rotation: [0,-3,0], id: 2} //silver monitor with screen off
 ];
 
-
-
 function ClickableObject({set}) {
+  const navigation = useNavigation();
   const {id, ...props} = store[set];
-  return <Dome onClick = {() => setOpenPanel(true)} {...props} />
+  return <Dome onClick = {navigation.navigate('InfoPanel')} {...props} />
 }
 
 extend({ OrbitControls })
@@ -41,6 +41,7 @@ function Controls(props) {
 
 
 function Tour () {
+
 
     return(
       <><SideMenu/>
