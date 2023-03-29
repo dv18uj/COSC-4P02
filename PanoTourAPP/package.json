@@ -12,6 +12,7 @@
     "@expo/webpack-config": "^0.17.2",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
+    "@react-three/drei": "^9.58.5",
     "@react-three/fiber": "^8.11.0",
     "@types/three": "^0.149.0",
     "expo": "~47.0.12",

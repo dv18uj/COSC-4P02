@@ -7,7 +7,7 @@ import {CSS2DObject} from "three/examples/jsm/renderers/CSS2DRenderer"
 import Dome from '../organisms/Dome'; 
 import InfoPanel from "../templates/InfoPanel.jsx";
 import SideMenu from "../organisms/NavMenu";
-import './tour.css';
+//import './tour.css';
 import '../templates/infoPanel.css';
 import { Vector3 } from 'three';
 import {useNavigation} from '@react-navigation/native';
@@ -21,7 +21,7 @@ const store = [
 function ClickableObject({set}) {
   const navigation = useNavigation();
   const {id, ...props} = store[set];
-  return <Dome onClick = {navigation.navigate('InfoPanel')} {...props} />
+  return <Dome /**onClick = {navigation.navigate('InfoPanel')}**/ {...props} />
 }
 
 extend({ OrbitControls })

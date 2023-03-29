@@ -4,7 +4,7 @@ import NavMenu from "../templates/InfoPanel.jsx";
 import {Html} from "@react-three/drei";
 import React, {useState, useEffect, useRef} from "react";
 import '../templates/infoPanel.css';
-import img from '../assets/Vector.png';
+import img from '../assets/Hotspot.png';
 import { Camera } from "three";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 function Dome({position, id, rotation}) {
