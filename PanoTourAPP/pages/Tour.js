@@ -7,7 +7,6 @@ import {CSS2DObject} from "three/examples/jsm/renderers/CSS2DRenderer"
 import Dome from '../organisms/Dome'; 
 import InfoPanel from "../templates/InfoPanel.jsx";
 import SideMenu from "../organisms/NavMenu";
-import '../templates/infoPanel.css';
 import { Vector3 } from 'three';
 import {useNavigation} from '@react-navigation/native';
 
