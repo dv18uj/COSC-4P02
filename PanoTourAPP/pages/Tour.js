@@ -2,14 +2,9 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import * as THREE from "three";
-import {CSS2DObject} from "three/examples/jsm/renderers/CSS2DRenderer"
-import Dome from '../organisms/Dome'; 
-import InfoPanel from "../templates/InfoPanel.jsx";
+import PanoView from '../templates/PanoView';
 import SideMenu from "../organisms/NavMenu";
-//import './tour.css';
 import '../templates/infoPanel.css';
-import { Vector3 } from 'three';
 import {useNavigation} from '@react-navigation/native';
 import Hotspot from '../atoms/Hotspot';
 
@@ -47,10 +42,7 @@ function Tour () {
       <Canvas  camera={{ position: [0, 0, 0.1] }}>
         <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2}  />
         <Suspense fallback={null}>
-        <ClickableObject   set={0} />
-        <ClickableObject   set={1} />
-        <ClickableObject   set={2} />
-        <Dome/>
+        <PanoView />
         </Suspense>
       </Canvas> </>
     );
