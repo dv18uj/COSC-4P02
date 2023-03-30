@@ -11,6 +11,7 @@ import SideMenu from "../organisms/NavMenu";
 import '../templates/infoPanel.css';
 import { Vector3 } from 'three';
 import {useNavigation} from '@react-navigation/native';
+import Hotspot from '../atoms/Hotspot';
 
 const store = [
   {position: [10, 4, -15], rotation: [0,-0.5,0], id: 0}, //top of door
@@ -19,9 +20,8 @@ const store = [
 ];
 
 function ClickableObject({set}) {
-  const navigation = useNavigation();
   const {id, ...props} = store[set];
-  return <Dome /**onClick = {navigation.navigate('InfoPanel')}**/ {...props} />
+  return <Hotspot /**onClick = {navigation.navigate('InfoPanel')}**/ {...props} />
 }
 
 extend({ OrbitControls })
@@ -41,16 +41,16 @@ function Controls(props) {
 
 
 function Tour () {
-
-
+  const navigation = useNavigation();
     return(
       <><SideMenu/>
       <Canvas  camera={{ position: [0, 0, 0.1] }}>
         <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2}  />
         <Suspense fallback={null}>
-        <ClickableObject set={0} />
-        <ClickableObject set={1} />
-        <ClickableObject set={2} />
+        <ClickableObject   set={0} />
+        <ClickableObject   set={1} />
+        <ClickableObject   set={2} />
+        <Dome/>
         </Suspense>
       </Canvas> </>
     );

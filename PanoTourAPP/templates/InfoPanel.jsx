@@ -1,12 +1,12 @@
 import React from "react";
 import './infoPanel.css';
-import {useNavigation, useNavigationBuilder} from '@react-navigation/native'
+import {useNavigation} from '@react-navigation/native'
 
 
 //Still need to center on page
 //move button to corner of div.a
 
-function Menu () {
+function InfoPanel () {
     const navigation = useNavigation();
 return(
     <div className="infoPanel">
@@ -24,4 +24,4 @@ return(
 )
 }
 
-export default Menu
+export default InfoPanel;
