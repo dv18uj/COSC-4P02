@@ -1,7 +1,7 @@
 import React from "react";
 import './infoPanel.css';
 import pic from '../assets/image1.PNG';
-
+import service from '../service'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import IconButton from "@mui/material/IconButton";
@@ -14,12 +14,16 @@ const handleClick = (e) => {
 
 
 const Menu = () => {
-
-  
+    const [artifact, setArtifact] = React.useState(null)
+    React.useEffect(()=>{
+        service.get('user/get?uid=1').then((response)=>{
+            setArtifact(response.data)
+        })
+    },[])
 
 return(
     <div className="infoPanel">
-        
+
         <div className="left">
             
             <div id="pictureDiv">
@@ -44,7 +48,7 @@ return(
             <h3>Building A/ Exhibit B </h3>
 
             <h4 id="title">
-                Title: aTitle
+                {artifact.name}
             </h4>
 
             <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure  </p> 
