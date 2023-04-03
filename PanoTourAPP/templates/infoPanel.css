@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+ .infoPanelBtn{
+    position: fixed;
+    display: flex;
+    top: 20px;
+    right: 20px;
+    z-index: 90;
+    
+ }
+
+ 
+ .infoPanel{
+        list-style: none;
+        display: flex;
+        flex-flow: row nowrap;
+        background-color: white ;
+        height: 300px;
+        width: 750px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        display: block;
+        box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+       
+         
+
+      
+      }
+   
+
+    .left{            
+        float: left;
+        width: 50%;
+        height: 100%;
+        color: white;
+    }
+
+    .right{
+        float: right;
+        width: 50%;
+        height: 100%;
+        margin-top: 15px;
+
+     }
+
+     .closeButton{
+        display: inline;
+        position: fixed;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        color: white;
+    
+     }
+
+     .A{
+        height: 20%;
+        width: 100%;
+        background-color: white ;  
+      
+         }
+    
+      .B{
+        height: 20%;
+        width: 100%;
+        background-color: white ;  
+         }
+
+     .C{
+        height: 60%;
+        width: 100%;
+        background-color: white  
+     }       
+
+
+     #pictureDiv{
+      margin: 15px 15px 0px  15px;
+      height: 80%;
+      text-align:"center";
+     }
+
+
+
+
+     #picture{
+      max-height:100%; max-width:100%;
+      margin: auto;
+      display: block;
+     }
+
+     #description{
+      margin-top: 10px;
+     }
+
+     #title{
+      margin-top: 10px;
+     }
+
+     #date{
+      margin-top:5px;
+     }
+
