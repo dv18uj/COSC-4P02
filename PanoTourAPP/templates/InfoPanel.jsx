@@ -6,6 +6,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import IconButton from "@mui/material/IconButton";
 import { Grid,Box } from '@mui/material';
+import { useNavigation } from '@react-navigation/native'
 
 
 const handleClick = (e) => {
@@ -14,16 +15,21 @@ const handleClick = (e) => {
 
 
 const Menu = () => {
+    const navigation = useNavigation()
     const [artifact, setArtifact] = React.useState(null)
     React.useEffect(()=>{
-        service.get('user/get?uid=1').then((response)=>{
+        service.get('/user/get',{
+            params: {
+                uid: 1
+            }
+        }).then((response)=>{
             setArtifact(response.data)
         })
     },[])
-
+    if(!artifact) return "No artifact"
 return(
     <div className="infoPanel">
-
+        <p onClick={navigation.goBack()} className="closeButton" >X</p>
         <div className="left">
             
             <div id="pictureDiv">
