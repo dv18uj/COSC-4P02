@@ -1,6 +1,7 @@
 import BuildingA from "../assets/Building_A.png"
 import BuildingB from "../assets/Building_B.png"
 import BuildingC from "../assets/Building_C.png"
+import {useState} from "react"
 import MapKey from "../molecules/MapKey"
 import styled from "styled-components"
 
@@ -16,11 +17,32 @@ const Wrapper = styled.div`
 `;
 
 function LocationMenu () {
+
+    const fetchData=()=>{
+        return(
+            [{
+                lid: 1,
+                name: "LocationA"
+            },
+            {
+                lid: 2,
+                name:"LocationB"
+            },
+            {
+                lid: 3,
+                name:"LocationC"
+            }]
+        )
+    }
+
+    const location = fetchData()
+
+    const[locationList,setList] = useState(location)
     return(
         <Wrapper>
-        <MapKey imgSource={BuildingA} heading="Building A" subheading =" Exhibit A\n Exhibit B\n Exhibit C"/>
-        <MapKey imgSource={BuildingB} heading="Building B" subheading =" Exhibit A\n Exhibit C"/>
-        <MapKey imgSource={BuildingC} heading="Building C" subheading =" Exhibit A"/>
+        {locationList.map((item) =>(
+            <MapKey hidden={false} imgSource={BuildingA} lid= {item.lid} text={item.name}/>
+        ))}
         </Wrapper>
     );
 }

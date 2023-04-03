@@ -5,6 +5,7 @@ import Link, { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Tour from './pages/Tour'
 import InfoPanel from './templates/InfoPanel'
+import './app.css'
 const Stack=createNativeStackNavigator();
 
 export default function App() {

@@ -4,7 +4,9 @@ import styled from "styled-components"
 
 const StyledHeading = styled.h2`
     font-weight: 700;
-    font-size: 1em;
+    font-size: 2em;
+    color: #FFF;
+    cursor: pointer;
     &:hover {
         font-weight:900;
     }
