@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-import NavMenu from "../atoms/Menu";
-
+import LocationMenu from "../organisms/LocationMenu";
+import { useNavigation } from "@react-navigation/native";
+import Menu from "../atoms/Menu";
 //adds button and animation to menu to create the side menu
 
 const StyledMenuBtn = styled.div`
@@ -41,6 +42,7 @@ const StyledMenuBtn = styled.div`
 `;
 
 const SideMenu = () => {
+    const navigation = useNavigation();
     const [open, setOpen] = useState(false);
 
     return(
@@ -50,7 +52,7 @@ const SideMenu = () => {
            <div />
            <div />
         </StyledMenuBtn>
-            <NavMenu open ={open}/>
+            <Menu open={open}/>
         </>
 
     )

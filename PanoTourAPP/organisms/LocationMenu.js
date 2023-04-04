@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     font-size: 20px;
 `;
 
-function LocationMenu () {
+function LocationMenu (props) {
 
     const fetchData=()=>{
         return(
@@ -41,7 +41,7 @@ function LocationMenu () {
     return(
         <Wrapper>
         {locationList.map((item) =>(
-            <MapKey hidden={false} imgSource={BuildingA} lid= {item.lid} text={item.name}/>
+            <MapKey hidden={props.showImg} imgSource={BuildingA} lid= {item.lid} text={item.name}/>
         ))}
         </Wrapper>
     );

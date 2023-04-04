@@ -7,6 +7,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Tour from './pages/Tour'
 import InfoPanel from './templates/InfoPanel'
 import './app.css'
+import addArtifact from './templates/addArtifact';
+import addPanoview from './templates/addPanoview';
 const Stack=createNativeStackNavigator();
 
 export default function App() {
@@ -25,6 +27,8 @@ export default function App() {
           }}
         >
           <Stack.Screen name = "InfoPanel" component={InfoPanel} options={{headerShown:false}}> </Stack.Screen>
+          <Stack.Screen name = "addArtifact" component={addArtifact} options={{headerShown:false}}> </Stack.Screen>
+          <Stack.Screen name = "addPanoview" component={addPanoview} options={{headerShown:false}}> </Stack.Screen>
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>

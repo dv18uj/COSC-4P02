@@ -6,7 +6,7 @@ import * as THREE from "three";
 import {CSS2DObject} from "three/examples/jsm/renderers/CSS2DRenderer"
 import Dome from '../organisms/Dome'; 
 import InfoPanel from "../templates/InfoPanel.jsx";
-import SideMenu from "../organisms/NavMenu";
+import NavMenu from "../organisms/NavMenu";
 //import './tour.css';
 import '../templates/infoPanel.css';
 import { Vector3 } from 'three';
@@ -43,7 +43,7 @@ function Controls(props) {
 function Tour () {
   const navigation = useNavigation();
     return(
-      <><SideMenu/>
+      <><NavMenu/>
       <Canvas  camera={{ position: [0, 0, 0.1] }}>
         <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2}  />
         <Suspense fallback={null}>

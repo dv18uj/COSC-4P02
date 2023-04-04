@@ -13,7 +13,6 @@ import '../templates/infoPanel.css';
 import { Vector3 } from 'three';
 import {useNavigation} from '@react-navigation/native';
 import Hotspot from '../atoms/Hotspot';
-import IconPalette from '../molecules/IconPalette';
 
 const store = [
   {position: [10, 4, -15], rotation: [0,-0.5,0], id: 0}, //top of door
@@ -46,10 +45,10 @@ function Tour () {
   const navigation = useNavigation();
     return(
       <><SideMenu/>
+      <IconPalette/>
       <Canvas  camera={{ position: [0, 0, 0.1] }}>
         <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2}  />
         <Suspense fallback={null}>
-            <IconPalette/>
             <Dome/>
         </Suspense>
       </Canvas> </>
