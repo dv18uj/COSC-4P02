@@ -10,6 +10,9 @@
 ######Dependencies
 
 
+TESTING
+
+
 cd Desktop/COSC-4P02/PanoTourAPP
 npx expo start
 
