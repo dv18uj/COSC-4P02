@@ -18,9 +18,9 @@ const Menu = () => {
     const navigation = useNavigation()
     const [artifact, setArtifact] = React.useState(null)
     React.useEffect(()=>{
-        service.get('/user/get',{
+        service.get('/project',{
             params: {
-                uid: 1
+                //uid: 1
             }
         }).then((response)=>{
             setArtifact(response.data)
@@ -54,7 +54,7 @@ return(
             <h3>Building A/ Exhibit B </h3>
 
             <h4 id="title">
-                {artifact.name}
+                {artifact.pname}
             </h4>
 
             <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure  </p> 

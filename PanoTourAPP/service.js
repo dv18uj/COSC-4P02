@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const username = 'root'
-const password = 'root'
+const username = 'johnsmith'
+const password = 'password'
 
 const token = Buffer.from(`${username}:${password}`,'utf8').toString('base64')
 const service = axios.create({
