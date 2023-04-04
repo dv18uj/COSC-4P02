@@ -1,6 +1,7 @@
 
 import React, { Suspense, useRef } from 'react';
 import StartingScreen from './pages/StartingScreen'
+import EditTour from './pages/EditTour'
 import Link, { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Tour from './pages/Tour'
@@ -15,6 +16,7 @@ export default function App() {
         <Stack.Group>
           <Stack.Screen name="Start" component={StartingScreen} options={{headerShown:false}} />
           <Stack.Screen name="Tour" component={Tour} options={{headerShown:false}}/>
+          <Stack.Screen name="EditTour" component={EditTour} options={{headerShown:false}}/>
         </Stack.Group>
         <Stack.Group 
           screenOptions={{ 

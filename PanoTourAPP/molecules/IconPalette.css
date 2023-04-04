@@ -1,0 +1,8 @@
+div {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+img {
+    height: 60px;
+}
