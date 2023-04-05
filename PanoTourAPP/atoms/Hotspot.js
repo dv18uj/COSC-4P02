@@ -19,7 +19,7 @@ function Hotspot ({position, id, rotation}) {
         <mesh 
             position={position} 
             rotation = {rotation} 
-            id = {id} onClick={() => navigation.navigate('InfoPanel')}
+            id = {id} onClick={() => navigation.navigate('InfoPanel',{id})}
             onPointerOver = {(event) => setHover(true)}
             onPointerOut = {(event) => setHover(false)}
         >

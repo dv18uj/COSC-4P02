@@ -14,7 +14,7 @@ import {useNavigation} from '@react-navigation/native';
 import Hotspot from '../atoms/Hotspot';
 
 const store = [
-  {position: [10, 4, -15], rotation: [0,-0.5,0], id: 0}, //top of door
+  {position: [10, 4, -15], rotation: [0,-0.5,0], id: 123}, //top of door
   {position: [4, -6, 6], rotation: [0,-2.6,0], id: 1}, //laptop on table
   {position: [-1, -4, 15], rotation: [0,-3,0], id: 2} //silver monitor with screen off
 ];

@@ -22,7 +22,7 @@ export default function App() {
             contentStyle: {backgroundColor: "#40404070"},
           }}
         >
-          <Stack.Screen name = "InfoPanel" component={InfoPanel} options={{headerShown:false}}> </Stack.Screen>
+          <Stack.Screen name = "InfoPanel" component={InfoPanel} options={{headerShown:false}} initialParams={{oid:123}}/>
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
