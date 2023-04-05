@@ -2,7 +2,6 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import IconPalette from '../molecules/IconPalette';
 import * as THREE from "three";
 import {CSS2DObject} from "three/examples/jsm/renderers/CSS2DRenderer"
 import Dome from '../organisms/Dome'; 
@@ -13,6 +12,7 @@ import '../templates/infoPanel.css';
 import { Vector3 } from 'three';
 import {useNavigation} from '@react-navigation/native';
 import Hotspot from '../atoms/Hotspot';
+import SidebarIcons from '../molecules/SidebarIcons'
 
 const store = [
   {position: [10, 4, -15], rotation: [0,-0.5,0], id: 0}, //top of door
@@ -41,11 +41,11 @@ function Controls(props) {
 }
 
 
-function Tour () {
+function EditTour () {
   const navigation = useNavigation();
     return(
       <><SideMenu/>
-      <IconPalette/>
+      <SidebarIcons/>
       <Canvas  camera={{ position: [0, 0, 0.1] }}>
         <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2}  />
         <Suspense fallback={null}>
@@ -55,4 +55,4 @@ function Tour () {
     );
 }
 
-export default Tour;
+export default EditTour;
