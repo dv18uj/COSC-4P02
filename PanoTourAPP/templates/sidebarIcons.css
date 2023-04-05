@@ -1,0 +1,6 @@
+.sidebar{
+    position: absolute;
+    z-index: 99;
+    top: 40%;
+    right:0px;
+}
