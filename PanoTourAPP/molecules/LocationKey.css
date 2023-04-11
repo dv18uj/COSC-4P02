@@ -1,0 +1,46 @@
+.locationKey {
+    display: flex;
+    width: auto;
+    cursor: pointer;
+    height: 2em;
+}
+
+.location {
+    position: absolute;
+    width: auto;
+    height: 1em;
+    font-weight: bold;
+}
+
+.location>h1 {
+    margin-block: 0px;
+}
+
+
+.section {
+    position: absolute;
+    width: auto;
+    height: 1.25em;
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+    font-size: 1.25em;
+    font-weight: 500;
+    margin-block: 0px;
+}
+
+.section>il {
+    display: block;
+}
+
+.section>il:hover {
+    text-shadow: 2px 2px 10px #eee;
+}
+
+.location:hover {
+    text-shadow: 2px 2px 10px #eee;
+}
+
+.locationKey:hover>.section {
+    transform: translateY(1.5em);
+    opacity: 1;
+}
