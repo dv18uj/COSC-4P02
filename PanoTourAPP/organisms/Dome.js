@@ -8,8 +8,9 @@ import { Camera } from "three";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { useNavigation } from "@react-navigation/native";
 function Dome() {
-    const texture = useLoader(THREE.TextureLoader, require('../assets/office.jpg'))
- 
+    const texture = useLoader(THREE.TextureLoader, "https://cosc.brocku.ca/~dv18uj/pano/1.jpg")
+
+    
       return (
       <mesh > 
        <sphereBufferGeometry attach="geometry" args={[500, 60, 40]} />
