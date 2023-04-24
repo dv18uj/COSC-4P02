@@ -10,8 +10,9 @@ import SideMenu from "../organisms/NavMenu";
 //import './tour.css';
 import '../templates/infoPanel.css';
 import { Vector3 } from 'three';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import Hotspot from '../atoms/Hotspot';
+import service from '../service';
 
 const store = [
   {position: [10, 4, -15], rotation: [0,-0.5,0], id: 123}, //top of door
@@ -19,10 +20,6 @@ const store = [
   {position: [-1, -4, 15], rotation: [0,-3,0], id: 2} //silver monitor with screen off
 ];
 
-function ClickableObject({set}) {
-  const {id, ...props} = store[set];
-  return <Hotspot /**onClick = {navigation.navigate('InfoPanel')}**/ {...props} />
-}
 
 extend({ OrbitControls })
 function Controls(props) {
@@ -42,14 +39,28 @@ function Controls(props) {
 
 function Tour () {
   const navigation = useNavigation();
-    return(
+  const route = useRoute();
+  const [hotspotList, setHotspots] = useState({})
+  const [panoview, setPID] = useState(route.params.pid)
+
+  React.useEffect(()=>{
+  service.get('/hotspot',{
+    params: {
+      pid: panoview
+    }
+  }).then((response)=>{
+    setHotspots(response.data)
+  })
+  },[panoview])
+
+  return(
       <><SideMenu/>
       <Canvas  camera={{ position: [0, 0, 0.1] }}>
         <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2}  />
         <Suspense fallback={null}>
-        <ClickableObject   set={0} />
-        <ClickableObject   set={1} />
-        <ClickableObject   set={2} />
+        {hotspotList.length ? hotspotList.map((item) =>(
+                <Hotspot position={[item.px,item.py, item.pz]} rotation={[item.rx, item.ry, item.rz]} artifact={item.oid}/>
+                )) : {} }
         <Dome/>
         </Suspense>
       </Canvas> </>

@@ -20,6 +20,7 @@ function InfoPanel () {
     const [artifact, setArtifact] = React.useState(null)
     
     React.useEffect(()=>{
+        console.log(route.params.oid)
         service.get('/artifact',{
             params: {
                 oid: route.params.oid
@@ -27,7 +28,7 @@ function InfoPanel () {
         }).then((response)=>{
             setArtifact(response.data)
         })
-    },[route.params])
+    },[route.params.oid])
     if(!artifact) return "No artifact"
 return(
     <div className="infoPanel">

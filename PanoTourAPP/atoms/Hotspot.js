@@ -5,13 +5,14 @@ import * as THREE from "three";
 import hover from '../assets/Hotspot_hover.png';
 import idle from '../assets/Hotspot.png';
 
-function Hotspot ({position, id, rotation}) {
+function Hotspot ({position, artifact, rotation}) {
     const navigation = useNavigation();
     const icon_hover = useLoader(THREE.TextureLoader,hover)
     const icon_idle = useLoader(THREE.TextureLoader, idle);
     const [hovered, setHover] = useState(false);
+    const [oid, setOid] = useState(artifact)
 
-    useEffect(() => {
+    React.useEffect(() => {
       document.body.style.cursor = hovered ? 'pointer' : 'auto'
     }, [hovered])
 
@@ -19,7 +20,7 @@ function Hotspot ({position, id, rotation}) {
         <mesh 
             position={position} 
             rotation = {rotation} 
-            id = {id} onClick={() => navigation.navigate('InfoPanel',{id})}
+            onClick={()=> navigation.navigate('InfoPanel',{oid: oid})}
             onPointerOver = {(event) => setHover(true)}
             onPointerOut = {(event) => setHover(false)}
         >
