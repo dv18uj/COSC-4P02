@@ -4,6 +4,7 @@ import StartingScreen from './pages/StartingScreen'
 import Link, { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Tour from './pages/Tour'
+import Login from './pages/Login'
 import InfoPanel from './templates/InfoPanel'
 import './app.css'
 const Stack=createNativeStackNavigator();
@@ -23,6 +24,7 @@ export default function App() {
           }}
         >
           <Stack.Screen name = "InfoPanel" component={InfoPanel} options={{headerShown:false}} />
+          <Stack.Screen name = "Login" component={Login} options={{headerShown:false}} />
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>

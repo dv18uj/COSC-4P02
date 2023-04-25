@@ -21,7 +21,7 @@ function Hotspot ({position, artifact, rotation}) {
         <mesh 
             position={position} 
             rotation = {rotation} 
-            onClick={()=> navigation.navigate('InfoPanel',{oid: oid})}
+            onClick={()=> navigation.navigate('Login')}
             onPointerOver = {(event) => setHover(true)}
             onPointerOut = {(event) => setHover(false)}
         >
