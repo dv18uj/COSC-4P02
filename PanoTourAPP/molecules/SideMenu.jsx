@@ -3,7 +3,6 @@ import NavMenu from "../atoms/Menu";
 import "./sidemenu.css";
 import { render } from "react-dom";
 
-//adds button and animation to menu to create the side menu
 
 function SideMenu () {
     const [open, setOpen] = useState(false);
@@ -31,6 +30,10 @@ function SideMenu () {
 
     const[locationList,setList] = useState(location);
     
+
+// The elements created from the .map() function only displays the last item on the
+// side menu. if you check console log, all are generated but not displayed, not sure why.
+
     return(
        
       <div className="container">

@@ -22,6 +22,7 @@ const Menu = (props) => {
     
     const open = props.open;
     const[sectionsList,SetSections] =  useState(sections);
+   
     return(
     
     <div className={open == true ? 'content' : 'content_active'} >
