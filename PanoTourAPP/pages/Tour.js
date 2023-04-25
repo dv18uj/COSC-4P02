@@ -43,34 +43,49 @@ function Tour () {
   const route = useRoute();
   const [hotspotList, setHotspots] = useState({})
   const [waypointList, setWaypoints] = useState({})
-  const [panoview, setPID] = useState(route.params.pid)
+  const [pid, setPID] = useState(route.params.pid)
+  const [panoview, setPanoview] =useState({})
 
   React.useEffect(()=>{
+  service.get('/panoview',{
+    params: {
+      pid: pid
+    }
+  }).then((response)=>{
+    setPanoview(response.data)
+  })
   service.get('/hotspot',{
     params: {
-      pid: panoview
+      pid: pid
     }
   }).then((response)=>{
     setHotspots(response.data)
   })
   service.get('/waypoint',{
     params: {
-      pid: panoview
+      pid: pid
     }
   }).then((response)=>{
     setWaypoints(response.data)
   })
   const fetchData = async () => {
-      const hotspots = await service.get('/hotspot',{
+      const fetchPanoview = await service.get('/panoview',{
         params: {
-          pid: panoview
+          pid: pid
+        }
+      }).then((response)=>{
+        setPanoview(response.data)
+      })
+      const fetchHotspots = await service.get('/hotspot',{
+        params: {
+          pid: pid
         }
       }).then((response)=>{
       setHotspots(response.data)
       });
-      const waypoints = await service.get('/waypoint',{
+      const fetchWaypoints = await service.get('/waypoint',{
         params: {
-        pid: panoview
+        pid: pid
         }
       }).then((response)=>{
       setWaypoints(response.data)
@@ -78,7 +93,7 @@ function Tour () {
     };
 
     fetchData();
-  },[panoview])
+  },[pid])
 
   return(
       <><SideMenu/>
@@ -91,7 +106,7 @@ function Tour () {
         {waypointList.length ? waypointList.map((item) =>(
                 <Waypoint position={[item.px,item.py, item.pz]} rotation={[item.rx, item.ry, item.rz]} panoview={item.toPid}/>
                 )) : { } }
-        <Dome/>
+        <Dome image = {panoview.image}/>
         </Suspense>
       </Canvas> </>
     );

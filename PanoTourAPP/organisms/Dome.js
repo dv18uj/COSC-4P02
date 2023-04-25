@@ -7,8 +7,8 @@ import '../templates/infoPanel.css';
 import { Camera } from "three";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { useNavigation } from "@react-navigation/native";
-function Dome() {
-    const texture = useLoader(THREE.TextureLoader, "https://cosc.brocku.ca/~dv18uj/pano/1.jpg")
+function Dome({image}) {
+    const texture = useLoader(THREE.TextureLoader, image)
     texture.center = new THREE.Vector2(0.5, 0.5);
     texture.rotation = Math.PI;
     texture.flipY=false;
