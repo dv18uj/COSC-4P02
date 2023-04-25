@@ -60,7 +60,7 @@ function Tour () {
         <Suspense fallback={null}>
         {hotspotList.length ? hotspotList.map((item) =>(
                 <Hotspot position={[item.px,item.py, item.pz]} rotation={[item.rx, item.ry, item.rz]} artifact={item.oid}/>
-                )) : {} }
+                )) : { } }
         <Dome/>
         </Suspense>
       </Canvas> </>

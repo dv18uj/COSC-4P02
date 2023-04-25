@@ -10,11 +10,12 @@ function Hotspot ({position, artifact, rotation}) {
     const icon_hover = useLoader(THREE.TextureLoader,hover)
     const icon_idle = useLoader(THREE.TextureLoader, idle);
     const [hovered, setHover] = useState(false);
-    const [oid, setOid] = useState(artifact)
+    const [oid, setOid] = useState(null)
 
     React.useEffect(() => {
       document.body.style.cursor = hovered ? 'pointer' : 'auto'
-    }, [hovered])
+      setOid(artifact)
+    }, [hovered, artifact])
 
     return (
         <mesh 

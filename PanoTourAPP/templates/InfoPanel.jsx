@@ -1,6 +1,5 @@
 import React from "react";
 import './infoPanel.css';
-import pic from '../assets/image1.PNG';
 import service from '../service'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -36,7 +35,7 @@ return(
         <div className="left">
             
             <div id="pictureDiv">
-                <img  src={pic} id="picture"/>
+                <img  src={artifact.url} id="picture"/>
             </div>
 
             <div id="icons">
