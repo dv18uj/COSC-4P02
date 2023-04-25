@@ -13,6 +13,7 @@ import { Vector3 } from 'three';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import Hotspot from '../atoms/Hotspot';
 import service from '../service';
+import Waypoint from '../atoms/Waypoint';
 
 const store = [
   {position: [10, 4, -15], rotation: [0,-0.5,0], id: 123}, //top of door
@@ -41,6 +42,7 @@ function Tour () {
   const navigation = useNavigation();
   const route = useRoute();
   const [hotspotList, setHotspots] = useState({})
+  const [waypointList, setWaypoints] = useState({})
   const [panoview, setPID] = useState(route.params.pid)
 
   React.useEffect(()=>{
@@ -51,6 +53,31 @@ function Tour () {
   }).then((response)=>{
     setHotspots(response.data)
   })
+  service.get('/waypoint',{
+    params: {
+      pid: panoview
+    }
+  }).then((response)=>{
+    setWaypoints(response.data)
+  })
+  const fetchData = async () => {
+      const hotspots = await service.get('/hotspot',{
+        params: {
+          pid: panoview
+        }
+      }).then((response)=>{
+      setHotspots(response.data)
+      });
+      const waypoints = await service.get('/waypoint',{
+        params: {
+        pid: panoview
+        }
+      }).then((response)=>{
+      setWaypoints(response.data)
+      });
+    };
+
+    fetchData();
   },[panoview])
 
   return(
@@ -60,6 +87,9 @@ function Tour () {
         <Suspense fallback={null}>
         {hotspotList.length ? hotspotList.map((item) =>(
                 <Hotspot position={[item.px,item.py, item.pz]} rotation={[item.rx, item.ry, item.rz]} artifact={item.oid}/>
+                )) : { } }
+        {waypointList.length ? waypointList.map((item) =>(
+                <Waypoint position={[item.px,item.py, item.pz]} rotation={[item.rx, item.ry, item.rz]} panoview={item.toPid}/>
                 )) : { } }
         <Dome/>
         </Suspense>

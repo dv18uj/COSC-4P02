@@ -21,7 +21,7 @@ function Waypoint ({position, panoview, rotation}) {
         <mesh 
             position={position} 
             rotation = {rotation} 
-            onClick={()=> navigation.navigate('Tour',{pid: pid})}
+            onClick={()=> navigation.push('Tour',{pid: pid})}
             onPointerOver = {(event) => setHover(true)}
             onPointerOut = {(event) => setHover(false)}
         >
