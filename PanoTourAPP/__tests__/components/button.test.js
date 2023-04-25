@@ -2,6 +2,7 @@ import React from 'react';
 import {fireEvent, render} from '@testing-library/react';
 import Button from '../../atoms/Button';
 
+
 describe('Button', () => {
     test('renders correctly', () => {
       const {getByText} = render(<Button title="Click me!" />);
