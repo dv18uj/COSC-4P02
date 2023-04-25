@@ -1,0 +1,91 @@
+.content {
+    margin: 0;
+    padding: 0;
+    flex-flow: column nowrap;
+    background-color: #252525;
+    opacity: 0.99;
+    position: fixed;
+    top: 0;
+    left: -250;
+    height: 100%;
+    width: 250px;
+    z-index: 90;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.content_active{
+    
+    list-style: none;
+    display: flex;
+    background-color: #252525;
+    opacity: 0.99;
+    position: fixed;
+    left: -250;
+    height: 100%;
+    width: 250px;
+    z-index: 90;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.rooms {
+    margin: 1;
+    padding: 1;
+    color:white;
+    
+    padding: 5px 25px;
+    z-index: 91;
+   
+ }
+
+ .rooms h1{
+    margin: 1;
+    padding: 1;
+    position:absolute;
+    display: inline-flex;
+    color:white;
+    
+    padding: 5px 25px;
+    z-index: 91;
+   
+ }
+
+ .rooms ul{
+   
+    list-style: none;
+ }
+ 
+
+
+/*
+ .Location {
+    margin: 1;
+    padding: 1;
+    position:relative;
+    display: block;
+    color:white;
+    padding: 5px 25px;
+    top: 4em;
+    z-index: 91;
+    
+ }
+ 
+
+.Section  {
+    margin: 1;
+    padding: 1;
+    list-style: none;
+    position: relative;
+    padding: 5px 25px;
+    display: block;
+    color:white;
+    top: 4.5em;
+    z-index: 91;
+    
+}
+
+*/
+
+
