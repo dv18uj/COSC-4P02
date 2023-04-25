@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-import NavMenu from "../atoms/Menu";
+import Menu from "../atoms/Menu";
 
 //adds button and animation to menu to create the side menu
 
@@ -50,7 +50,7 @@ const SideMenu = () => {
            <div />
            <div />
         </StyledMenuBtn>
-            <NavMenu open ={open}/>
+        <Menu open ={open}/>
         </>
 
     )

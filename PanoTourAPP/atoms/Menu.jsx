@@ -31,13 +31,25 @@ const Ul = styled.ul`
     
 `;
 
+const Wrapper = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+    position: absolute;
+    transform: ${({open}) => open ? 'translateX(0)' : 'translateX(-100%)'};
+    opacitiy: ${({open}) => open ? 0 : 1};
+    z-index: 2;
+    background-color: grey;
+    transition: transform 1s ease, opacity 1s ease;
+`
+
 const Menu = ({ open }) => {
 return(
-    <Ul open={open}>
-        <li>Building 1</li>
-        <li>Building 2</li>
-        <li>Building 3</li>
-    </Ul>
+    <Wrapper open={open}>
+    test
+    </Wrapper>
 )
 
 }
