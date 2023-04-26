@@ -1,8 +1,9 @@
-import React, {useState} from "react";
-import NavMenu from "../atoms/Menu";
+import React, {useState, FunctionComponent} from "react";
+import Menu from "../atoms/Menu";
 import "./sidemenu.css";
 import { render } from "react-dom";
 
+//adds button and animation to menu to create the side menu
 
 function SideMenu () {
     const [open, setOpen] = useState(false);
@@ -28,11 +29,18 @@ function SideMenu () {
     const location = fetchData()
     
 
-    const[locationList,setList] = useState(location);
-    
+    const List = () =>  {
+        const[locationList,setList] = useState(location);
+       
+        const ListTag = function () {
+            return locationList && locationList.map(item => <Menu key = {item.lid} open ={open} lid = {item.lid} text = {item.name} />)
+          };
+       
+        return(
+        <ListTag/>
 
-// The elements created from the .map() function only displays the last item on the
-// side menu. if you check console log, all are generated but not displayed, not sure why.
+        )
+    }
 
     return(
        
@@ -42,16 +50,8 @@ function SideMenu () {
            <div />
            <div />
         </div>
-        
-
-        {locationList.map(item => {  
-            return (
-                
-             <NavMenu open ={open} lid = {item.lid} text = {item.name} />
-                
-        ) 
-    })
-        }
+      <List/>
+       
 
         </div>
         

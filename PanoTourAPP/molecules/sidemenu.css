@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
-    z-index: 99;
+    z-index: 90;
 }
 
 .navbar_active{
@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
-    z-index: 99;
+    z-index: 90;
 }
 
 .navbar_active div{ 
