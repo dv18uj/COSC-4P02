@@ -1,7 +1,7 @@
 import React from "react";
 import './infoPanel.css';
 import pic from '../assets/image1.PNG';
-import pic1 from '../assets/mag.PNG';
+import pic1 from '../assets/Hotspot.png';
 import Tour from '../pages/Tour.js';
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
