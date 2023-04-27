@@ -22,12 +22,15 @@
     width: auto;
     height: 1.25em;
     opacity: 0;
+    translate: 20px;
     transition: transform 1s ease, opacity 1s ease;
     font-size: 1.25em;
     font-weight: 500;
     margin-block: 0px;
 }
-
+.section>li:not(:last-child) {
+    margin-bottom: 8px;
+}
 .section>il {
     display: block;
 }
@@ -41,6 +44,6 @@
 }
 
 .locationKey:hover>.section {
-    transform: translateY(1.5em);
+    transform: translateY(2.25em);
     opacity: 1;
 }
