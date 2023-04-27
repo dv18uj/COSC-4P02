@@ -49,7 +49,7 @@
 
      .closeButton{
         display: inline;
-        position: fixed;
+        float: right;
         top: 5px;
         right: 5px;
         cursor: pointer;
@@ -76,6 +76,24 @@
         background-color: white  
      }       
 
+     .tag{
+      border-bottom: 1px solid rgb(151, 145, 145);
+      width: 85%;
+      margin-bottom: 5px;
+     }
+     
+ 
+     .close{
+      cursor: pointer;
+      position: absolute;
+      top: 0%;
+      right: 0%;
+      padding: 10px 10px;
+      border: none;
+      transform: translate(0%, -0%);
+     }
+
+     .close:hover {background: #a52121;}
 
      #pictureDiv{
       margin: 15px 15px 0px  15px;
@@ -92,14 +110,26 @@
       display: block;
      }
 
+     #picture1{
+      float: left;
+      width: 30px;
+      height: 30px;
+      align-self: center;
+      margin-right: 15px;
+     }
+
      #description{
       margin-top: 10px;
      }
 
      #title{
-      margin-top: 10px;
+      margin-top: 20px;
      }
 
      #date{
-      margin-top:5px;
+      margin-top:20px;
+     }
+
+     #top1{
+      margin-bottom: 10px;
      }
