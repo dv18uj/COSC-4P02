@@ -3,27 +3,24 @@
 import Heading from "../atoms/Heading"
 import Subheading from "../atoms/Subheading"
 import "./LocationKey.css"
-import {useState} from "react"
+import service from '../service'
+import React, {useState} from "react"
 
 function LocationKey (props) {
     const[hidden,setHidden] = useState(props.hidden)
     const location = props.lid
-    const sections = [
-        {
-            sid: 1,
-            name: "sectionA"
-        },
-        {   
-            sid: 2,
-            name: "sectionB"
-        },
-        {
-            sid: 3,
-            name: "sectionC"
-        }
-    ]
+    const[sectionsList,setSections] =  useState([]);
 
-    const[sectionsList,SetSections] =  useState(sections);
+    React.useEffect(()=>{
+        service.get('/section/fromLid',{
+            params: {
+                lid: location
+            }
+        }).then((response)=>{
+            setSections(response.data)
+        })
+    },[location])
+
     return (
         <div class = "locationKey" >
             <div class ="location">
