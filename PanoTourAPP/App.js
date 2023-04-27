@@ -14,7 +14,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Start">
         <Stack.Group>
           <Stack.Screen name="Start" component={StartingScreen} options={{headerShown:false}} />
-          <Stack.Screen name="Tour" component={Tour} options={{headerShown:false}}/>
+          <Stack.Screen name="Tour" component={Tour} options={{headerShown:false}} initialParams={{pid:1}}/>
         </Stack.Group>
         <Stack.Group 
           screenOptions={{ 
@@ -22,7 +22,7 @@ export default function App() {
             contentStyle: {backgroundColor: "#40404070"},
           }}
         >
-          <Stack.Screen name = "InfoPanel" component={InfoPanel} options={{headerShown:false}}> </Stack.Screen>
+          <Stack.Screen name = "InfoPanel" component={InfoPanel} options={{headerShown:false}} />
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>

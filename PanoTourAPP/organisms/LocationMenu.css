@@ -1,0 +1,46 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    row-gap: 20px;
+    margin: 5px;
+    height: 80%;
+    color: white;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    flex: 0.001 0 5em;
+    transition: flex-basis 500ms ease-in-out;
+}
+.row:hover{
+    flex-basis: 20em;
+}
+.row:last-child:hover{
+    flex-basis: 5em;
+}
+.imageColumn{
+    display: flex;
+    flex-direction: column;
+    flex-basis:100%;
+    flex: 1;
+    align-self: center;
+}
+.locationColumn{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    align-self: center;
+    flex: 2;
+    padding:0px 0px 0px 20px;
+}
+
+.image{
+    height: 75px;
+    align-self: center;
+}

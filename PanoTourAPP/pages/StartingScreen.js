@@ -20,6 +20,7 @@ const Wrapper = styled.div`
     padding: 75px;
     height: 100%;
     width: 50%;
+    display: flex;
 `;
 
 const StyledLine = styled.div`
