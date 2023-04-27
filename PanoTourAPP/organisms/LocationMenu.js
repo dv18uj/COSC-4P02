@@ -1,49 +1,33 @@
 import BuildingA from "../assets/Building_A.png"
 import BuildingB from "../assets/Building_B.png"
 import BuildingC from "../assets/Building_C.png"
-import {useState} from "react"
-import MapKey from "../molecules/MapKey"
-import styled from "styled-components"
-
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height:100%;
-    width:100%;
-    gap:20px;
-    font-size: 20px;
-`;
+import service from '../service'
+import React, {useState} from "react"
+import LocationKey from "../molecules/LocationKey"
+import "./LocationMenu.css" 
 
 function LocationMenu () {
+    const[locationList,setLocations] = useState([])
+    
+    React.useEffect(()=>{
+        service.get('/location/all',{}).then((response)=>{
+            setLocations(response.data)
+        })
+    },[])
 
-    const fetchData=()=>{
-        return(
-            [{
-                lid: 1,
-                name: "LocationA"
-            },
-            {
-                lid: 2,
-                name:"LocationB"
-            },
-            {
-                lid: 3,
-                name:"LocationC"
-            }]
-        )
-    }
-
-    const location = fetchData()
-
-    const[locationList,setList] = useState(location)
     return(
-        <Wrapper>
-        {locationList.map((item) =>(
-            <MapKey hidden={false} imgSource={BuildingA} lid= {item.lid} text={item.name}/>
+        <div class="wrapper">
+            {locationList.map((item) =>(
+            <div class = "row">
+                <div class = "imageColumn">
+                    <img class = "image" src = {item.image}/>
+                </div>
+                <div class = "locationColumn">
+                    <LocationKey lid= {item.lid} text={item.name}/>
+                </div>
+            </div>
         ))}
-        </Wrapper>
+        </div>
     );
 }
 

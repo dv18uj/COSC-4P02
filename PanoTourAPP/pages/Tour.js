@@ -10,19 +10,17 @@ import SideMenu from "../organisms/NavMenu";
 //import './tour.css';
 import '../templates/infoPanel.css';
 import { Vector3 } from 'three';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import Hotspot from '../atoms/Hotspot';
+import service from '../service';
+import Waypoint from '../atoms/Waypoint';
 
 const store = [
-  {position: [10, 4, -15], rotation: [0,-0.5,0], id: 0}, //top of door
+  {position: [10, 4, -15], rotation: [0,-0.5,0], id: 123}, //top of door
   {position: [4, -6, 6], rotation: [0,-2.6,0], id: 1}, //laptop on table
   {position: [-1, -4, 15], rotation: [0,-3,0], id: 2} //silver monitor with screen off
 ];
 
-function ClickableObject({set}) {
-  const {id, ...props} = store[set];
-  return <Hotspot /**onClick = {navigation.navigate('InfoPanel')}**/ {...props} />
-}
 
 extend({ OrbitControls })
 function Controls(props) {
@@ -42,15 +40,73 @@ function Controls(props) {
 
 function Tour () {
   const navigation = useNavigation();
-    return(
+  const route = useRoute();
+  const [hotspotList, setHotspots] = useState({})
+  const [waypointList, setWaypoints] = useState({})
+  const [pid, setPID] = useState(route.params.pid)
+  const [panoview, setPanoview] =useState({})
+
+  React.useEffect(()=>{
+  service.get('/panoview',{
+    params: {
+      pid: pid
+    }
+  }).then((response)=>{
+    setPanoview(response.data)
+  })
+  service.get('/hotspot',{
+    params: {
+      pid: pid
+    }
+  }).then((response)=>{
+    setHotspots(response.data)
+  })
+  service.get('/waypoint',{
+    params: {
+      pid: pid
+    }
+  }).then((response)=>{
+    setWaypoints(response.data)
+  })
+  const fetchData = async () => {
+      const fetchPanoview = await service.get('/panoview',{
+        params: {
+          pid: pid
+        }
+      }).then((response)=>{
+        setPanoview(response.data)
+      })
+      const fetchHotspots = await service.get('/hotspot',{
+        params: {
+          pid: pid
+        }
+      }).then((response)=>{
+      setHotspots(response.data)
+      });
+      const fetchWaypoints = await service.get('/waypoint',{
+        params: {
+        pid: pid
+        }
+      }).then((response)=>{
+      setWaypoints(response.data)
+      });
+    };
+
+    fetchData();
+  },[pid])
+
+  return(
       <><SideMenu/>
       <Canvas  camera={{ position: [0, 0, 0.1] }}>
         <Controls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2}  />
         <Suspense fallback={null}>
-        <ClickableObject   set={0} />
-        <ClickableObject   set={1} />
-        <ClickableObject   set={2} />
-        <Dome/>
+        {hotspotList.length ? hotspotList.map((item) =>(
+                <Hotspot position={[item.px,item.py, item.pz]} rotation={[item.rx, item.ry, item.rz]} artifact={item.oid}/>
+                )) : { } }
+        {waypointList.length ? waypointList.map((item) =>(
+                <Waypoint position={[item.px,item.py, item.pz]} rotation={[item.rx, item.ry, item.rz]} panoview={item.toPid}/>
+                )) : { } }
+        <Dome image = {panoview.image}/>
         </Suspense>
       </Canvas> </>
     );
