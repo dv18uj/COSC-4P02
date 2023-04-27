@@ -102,11 +102,11 @@ function Tour () {
         <Suspense fallback={null}>
         {hotspotList.length ? hotspotList.map((item) =>(
                 <Hotspot position={[item.px,item.py, item.pz]} rotation={[item.rx, item.ry, item.rz]} artifact={item.oid}/>
-                )) : { } }
+                )) : <></> }
         {waypointList.length ? waypointList.map((item) =>(
                 <Waypoint position={[item.px,item.py, item.pz]} rotation={[item.rx, item.ry, item.rz]} panoview={item.toPid}/>
-                )) : { } }
-        <Dome image = {panoview.image}/>
+                )) : <></> }
+        <Dome image = {panoview.image ? panoview.image : require('../assets/testpano.png')}/>
         </Suspense>
       </Canvas> </>
     );
