@@ -16,15 +16,6 @@ const handleClick = (e) => {
     console.log("clicked");
   };
 
-
-
-const Menu = () => {
-  
-
-return(
-    <div className="infoPanel">
-        <button class = "close" onClick={() => useNavigation.navigate('../pages/Tour.js')}>&times;</button>
-/*
 function InfoPanel () {
     const navigation = useNavigation()
     const route = useRoute()
@@ -44,7 +35,6 @@ function InfoPanel () {
 return(
     <div className="infoPanel">
         <p onClick={()=>{navigation.goBack()}} className="closeButton" >X</p>
-*/
         <div className="left">
             
             <div id="pictureDiv">
@@ -66,17 +56,13 @@ return(
         </div>
         <div className="right">
         
-            <h3 class = "tag" id="top1">Building A/ Exhibit B </h3>
-            <div class="tag"><img  src={pic1} id="picture1"/><h1> Button</h1></div>
+            <h3 class = "tag" id="top1"> /  </h3>
+            <div class="tag"><img  src={pic1} id="picture1"/><h1> {artifact.name}</h1></div>
 
-            <p class="tag" id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure  </p> 
+            <p class="tag" id="description">{artifact.description}</p> 
             
-            <h4 id="title">
-                {artifact.name}
-            </h4>
-            
-            <h4 id="date">
-                Date: 01/24/1997
+            <h4 id="number_images">
+                Number of Images: {artifact.number_images}
             </h4>
             
             {/* you can put a search bar over here */}
