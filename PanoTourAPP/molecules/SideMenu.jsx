@@ -1,4 +1,6 @@
 import React, {useState, FunctionComponent} from "react";
+import SideMenuKey from "./SideMenuKey";
+import service from "../service";
 import "./sidemenu.css";
 
 //adds button and animation to menu to create the side menu
@@ -55,9 +57,14 @@ function SideMenu () {
         }
     ]
     
-    const[sectionsList,SetSections] =  useState(sections);
-    const[locationList,setList] = useState(location);
+    const[locationList,setLocations] = useState(location);
     const [hovered, setHover] = useState(false);
+
+    React.useEffect(()=>{
+        service.get('/location/all').then((response)=>{
+            setLocations(response.data)
+        })
+    },[])
 
     return(
        
@@ -78,11 +85,7 @@ function SideMenu () {
                     {locationList.map((loc) => (
                         <div key={loc.lid}>  
                             <h2 className="location_head">{loc.name}</h2>
-                            <ul className="section_list">
-                                {sectionsList.map((sec) => (
-                                    <li key={sec.sid}>{sec.name}</li>
-                                ))}
-                            </ul>
+                            <SideMenuKey lid={loc.lid}/>
                         </div>
                     ))}
                 </div>

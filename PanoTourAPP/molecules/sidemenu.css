@@ -168,13 +168,20 @@
 .section_list li{
     text-align: center;
     margin: 5px 5px;
+    cursor: pointer;
 }
-
+.section_list li:hover {
+    text-shadow: 2px 2px 10px #eee;
+}
 .location_head{
     text-align: center;
+    font-size: 1em;
     margin: 5px 5px;   
+    cursor: pointer;
 }
-
+.location_head:hover {
+    text-shadow: 2px 2px 10px #eee;
+}
 .login_button{
     height: 10%;
     width: 60%;
@@ -186,4 +193,8 @@
     transform: translate(-50%, 0%);
     text-align: center;
     color: white;
+}
+
+.section{
+    cursor: pointer;
 }
