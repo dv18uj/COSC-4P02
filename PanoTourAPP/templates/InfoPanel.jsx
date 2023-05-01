@@ -10,7 +10,7 @@ import IconButton from "@mui/material/IconButton";
 import { Grid,Box } from '@mui/material';
 import { useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native'
-
+import {ReactFitty} from 'react-fitty'
 
 const handleClick = (e) => {
     console.log("clicked");
@@ -55,20 +55,29 @@ return(
             </div>
         </div>
         <div className="right">
-        
-            <h3 class = "tag" id="top1"> /  </h3>
-            <div class="tag"><img  src={pic1} id="picture1"/><h1> {artifact.name}</h1></div>
-
+            <div class="hotspot-title">
+                <img  src={pic1} id="picture1"/>
+                <ReactFitty id="title"> {artifact.name}</ReactFitty>
+            </div>
+            
             <p class="tag" id="description">{artifact.description}</p> 
             
-            <h4 id="number_images">
-                Number of Images: {artifact.number_images}
-            </h4>
-            
+            <div class='other'>
+                <div class='other-row'>
+                    {artifact.title ? <ReactFitty class = "other-data"> <strong>Title: </strong> {artifact.title}</ReactFitty> : <></>}
+                    {artifact.subjects ? <ReactFitty class = "other-data"> <strong>Subjects: </strong>{artifact.subjects}</ReactFitty> : <></>}
+                    {artifact.photographer ? <ReactFitty class = "other-data"><strong>Photographer: </strong>{artifact.photographer}</ReactFitty> : <></>}
+                    {artifact.dimensions ? <ReactFitty class = "other-data"> <strong>Dimensions: </strong>{artifact.dimensions}</ReactFitty> : <></>}
+                </div>
+                <div class='other-row'>
+                    {artifact.date ? <ReactFitty class = "other-data"><strong>Date: </strong> {artifact.date}</ReactFitty> : <></>}
+                    {artifact.people ? <ReactFitty class = "other-data"><strong>People: </strong>{artifact.people}</ReactFitty> : <></>}
+                    {artifact.studio ? <ReactFitty class = "other-data"><strong>Studio: </strong>{artifact.studio}</ReactFitty> : <></>}
+                </div>
+            </div>
             {/* you can put a search bar over here */}
             
         </div>
-    
     </div>
     
 )
