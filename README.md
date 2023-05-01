@@ -51,7 +51,7 @@ To use the currently working web server build with
 ```
 npx expo export:web
 ```
-Once the webpack is compiled the project can be ran with
+Once the webpack is compiled the project can be run with
 ```
 npx serve web-build
 ```
